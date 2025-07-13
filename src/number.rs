@@ -79,6 +79,7 @@ impl Number {
         }
     }
 
+    /// Returns a Number representing zero
     #[inline]
     pub fn zero() -> Number {
         Number {
@@ -87,6 +88,7 @@ impl Number {
         }
     }
 
+    /// Returns a Number representing one
     #[inline]
     pub fn one() -> Number {
         Number {
@@ -95,26 +97,39 @@ impl Number {
         }
     }
 
+    /// Returns a reference to the numerator
     #[inline]
     pub fn numerator(&self) -> &BigInt {
         &self.numerator
     }
 
+    /// Returns a reference to the denominator
+    ///
+    /// The denominator should always be positive and never zero
     #[inline]
     pub fn denominator(&self) -> &BigInt {
         &self.denominator
     }
 
+    /// Returns the sign of the Number
+    ///
+    /// The sign is derived from the numerator
     #[inline]
     pub fn sign(&self) -> Sign {
         self.numerator.sign()
     }
 
+    /// Returns true if the Number is an integer
+    ///
+    /// An integer is defined as a Number whose denominator is one
     #[inline]
     pub fn is_int(&self) -> bool {
         self.denominator.is_one()
     }
 
+    /// Returns true if the number is zero
+    ///
+    /// A Number is zero if its numerator is zero
     #[inline]
     pub fn is_zero(&self) -> bool {
         self.numerator.is_zero()

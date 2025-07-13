@@ -12,16 +12,7 @@ use crate::number::Number;
 #[inline]
 pub fn compare(a: &Number, b: &Number) -> Ordering {
     match (a.sign(), b.sign()) {
-        (Plus, Plus) => {
-            if a.denominator() == b.denominator() {
-                a.numerator().cmp(b.numerator())
-            } else {
-                let a_new = a.numerator() * b.denominator();
-                let b_new = b.numerator() * a.denominator();
-                a_new.cmp(&b_new)
-            }
-        },
-        (Minus, Minus) => {
+        (Plus, Plus) | (Minus, Minus) => {
             if a.denominator() == b.denominator() {
                 a.numerator().cmp(b.numerator())
             } else {

@@ -21,28 +21,28 @@ mod tests {
         assert!(n(0, 5) == n(0, 1));
     }
 
-    #[test]
+#[test]
     fn test_compare_greater() {
         assert!(n(3, 4) > n(1, 2));
         assert!(n(5, 6) > n(4, 6));
         assert!(n(7, 2) > n(3, 1));
     }
 
-    #[test]
+#[test]
     fn test_compare_less() {
         assert!(n(1, 3) < n(2, 3));
         assert!(n(-1, 2) < n(1, 2));
         assert!(n(-3, 4) < n(-2, 4));
     }
 
-    #[test]
+#[test]
     fn test_compare_mixed_signs() {
         assert!(n(-1, 2) < n(0, 1));
         assert!(n(0, 1) < n(1, 2));
         assert!(n(-3, 5) < n(2, 5));
     }
 
-    #[test]
+#[test]
     fn test_compare_same_numerators_different_denominators() {
         assert!(n(1, 2) < n(1, 1));
         assert!(n(2, 3) > n(2, 4));
@@ -80,6 +80,6 @@ mod tests {
 #[test]
     fn test_div_by_zero() {
         let result = div(&n(1, 2), &n(0, 1));
-        assert!(matches!(result, Err(NumberError::ZeroDenominator)));
+        assert!(matches!(result, Err(NumberError::DivisionByZero)));
     }
 }

@@ -26,7 +26,7 @@ pub fn compare(a: &Number, b: &Number) -> Ordering {
             } else {
                 let a_new = a.numerator() * b.denominator();
                 let b_new = b.numerator() * a.denominator();
-                a_new.cmp(&b_new).reverse()
+                a_new.cmp(&b_new)
             }
         },
         (NoSign, Plus) => Less,
@@ -50,3 +50,5 @@ impl PartialOrd for Number {
         Some(compare(self, other))
     }
 }
+
+impl Eq for Number {}

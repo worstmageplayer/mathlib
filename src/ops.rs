@@ -101,7 +101,6 @@ pub fn div(a: &Number, b: &Number) -> Result<Number, NumberError> {
         denominator = a.denominator() * b.numerator();
     }
 
-
     Number::new(numerator, denominator)
 }
 

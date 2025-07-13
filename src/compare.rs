@@ -9,6 +9,7 @@ use crate::number::Number;
 /// Compares two Number values
 ///
 /// Returns their relative ordering
+#[inline]
 pub fn compare(a: &Number, b: &Number) -> Ordering {
     match (a.sign(), b.sign()) {
         (Plus, Plus) => {

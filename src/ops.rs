@@ -89,7 +89,7 @@ pub fn div(a: &Number, b: &Number) -> Result<Number, NumberError> {
     // a/b * c/d = ad/bc
 
     if b.is_zero() {
-        return Err(NumberError::ZeroDenominator);
+        return Err(NumberError::DivisionByZero);
     }
 
     let (numerator, denominator);

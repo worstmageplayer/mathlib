@@ -16,7 +16,7 @@ pub struct Number {
 impl Number {
     /// Creates a new Number given a numerator and denominator.
     ///
-    /// The fraction is always reduced to its lowest form
+    /// The fraction will be reduced to its lowest form
     /// and its denominator will always be positive.
     ///
     /// Returns NumberError if the denominator is zero.
